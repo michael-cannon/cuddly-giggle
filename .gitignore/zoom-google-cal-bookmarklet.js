@@ -3,7 +3,7 @@ javascript:function url() {
 	var zoomcode = '8613144223';
 	var phonenumber = '+1 617 539 6072';
 
-	var details = 'Location contains connection details. Call or SMS '+phonenumber+' for last-minute changes.\n\nDial in +16699006833,,'+zoomcode+'#,,,,,# or for India, 0008000014002,,'+zoomcode+'#,,,,,#';
+	var details = 'Location contains connection details. Call or SMS '+phonenumber+' for last-minute changes.\n\nDial in +16699006833,,'+zoomcode+'#,,,,,# or from India 0008000014002,,'+zoomcode+'#,,,,,#';
 
 	var date = new Date();
 	var y = date.getFullYear();
