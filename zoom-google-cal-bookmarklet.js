@@ -1,9 +1,19 @@
+// Google Calendar bookmarklet to create an event with pre-filled Zoom.info call information
 javascript: function url() {
+	// default event title
 	var base_purpose = "Catch-up b/t TBD & Michael";
-	var base_event_advance = 1;
+	
+	// default days to delay event; 1, tomorrow; 7, same day next week; 14, two weeks from now
+	var base_day_advance = 1;
+	
+	// HHMM 10 am
 	var base_time_start = "1000";
 	var base_time_end = "1030";
+	
+	// Michael's personal default Zoom.info code
 	var base_zoomcode = "8613144223";
+	
+	// Michael's global number
 	var base_phonenumber = "+1 617 539 6072";
 
 	purpose = prompt("Event purpose?", base_purpose);
@@ -17,17 +27,19 @@ javascript: function url() {
 	if (m < 10) {
 		m = "0" + m;
 	}
-	var d = date.getDate() + base_event_advance;
+	var d = date.getDate() + base_day_advance;
 	if (d < 10) {
 		d = "0" + d;
 	}
 
+	// Combine date components as string to prevent math operations
 	var base_event_date = y + "" + m + "" + d;
 	event_date = prompt("Event date? YYYYMMDD", base_event_date);
 	if (null == event_date) {
 		event_date = base_event_date;
 	}
 
+	// It blows my mind that regular expressions don't need string encapsulation. A surprisingly hard concept for me to overcome.
 	var reg_ymd = /\d{8}/g;
 	event_date = encodeURIComponent(event_date).match(reg_ymd);
 	if (null == event_date) {
@@ -61,6 +73,7 @@ javascript: function url() {
 		timezone = base_timezone;
 	}
 
+	// set true if you want to ask about changing normally left alone details
 	if (false) {
 		zoomcode = prompt("Which Zoom ID?", base_zoomcode);
 		if (null == zoomcode) {
