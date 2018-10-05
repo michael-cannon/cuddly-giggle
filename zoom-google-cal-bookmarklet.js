@@ -1,5 +1,6 @@
-// Google Calendar bookmarklet to create an event with pre-filled Zoom.info call information
 javascript: function url() {
+  // Google Calendar bookmarklet to create an event with pre-filled Zoom.info call information
+
   // default event title
   var base_purpose = "Catch-up b/t TBD & Michael";
 
