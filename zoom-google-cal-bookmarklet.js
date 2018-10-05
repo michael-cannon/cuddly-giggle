@@ -69,7 +69,7 @@ javascript: function createGCalEventUrl() {
   }
 
   var zoomcode = null;
-  var phonenumber = base_phonenumber;
+  var phonenumber = null;
   if (false) {
     zoomcode = prompt("Which Zoom ID?", base_zoomcode);
     if (null == zoomcode) {
