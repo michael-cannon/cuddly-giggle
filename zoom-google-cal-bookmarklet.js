@@ -1,6 +1,6 @@
 javascript: function createGCalEventUrl() {
   var base_purpose_var = "TBD";
-  var base_purpose = "Catch-up b/t " + base_purpose_var + " Michael";
+  var base_purpose = "Catch-up b/t " + base_purpose_var + " & Michael";
   var purpose = null;
   var selection = window.getSelection().toString();
   if ("" == selection || null == selection) {
