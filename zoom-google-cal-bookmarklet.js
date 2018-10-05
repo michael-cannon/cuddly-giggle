@@ -1,26 +1,22 @@
-javascript: function url() {
-  // Google Calendar bookmarklet to create an event with pre-filled Zoom.info call information
+javascript: function createGCalEventUrl() {
+  var base_purpose_var = "TBD";
+  var base_purpose = "Catch-up b/t " + base_purpose_var + " Michael";
+  var purpose = null;
+  var selection = window.getSelection().toString();
+  if ("" == selection || null == selection) {
+    purpose = prompt("Event purpose?", base_purpose);
+    if (null == purpose) {
+      purpose = base_purpose;
+    }
+  } else {
+    purpose = base_purpose.replace(base_purpose_var, selection);
+  }
 
-  // default event title
-  var base_purpose = "Catch-up b/t TBD & Michael";
-
-  // default days to delay event; 1, tomorrow; 7, same day next week; 14, two weeks from now
   var base_day_advance = 1;
-
-  // HHMM 10 am
   var base_time_start = "1000";
   var base_time_end = "1030";
-
-  // Michael's personal default Zoom.info code
   var base_zoomcode = "8613144223";
-
-  // Michael's global number
   var base_phonenumber = "+1 617 539 6072";
-
-  var purpose = prompt("Event purpose?", base_purpose);
-  if (null == purpose) {
-    purpose = base_purpose;
-  }
 
   var date = new Date();
   var y = date.getFullYear();
@@ -33,14 +29,12 @@ javascript: function url() {
     d = "0" + d;
   }
 
-  // Combine date components as string to prevent math operations
   var base_event_date = y + "" + m + "" + d;
   var event_date = prompt("Event date? YYYYMMDD", base_event_date);
   if (null == event_date) {
     event_date = base_event_date;
   }
 
-  // It blows my mind that regular expressions don't need string encapsulation. A surprisingly hard concept for me to overcome.
   var reg_ymd = /\d{8}/g;
   event_date = encodeURIComponent(event_date).match(reg_ymd);
   if (null == event_date) {
@@ -74,7 +68,6 @@ javascript: function url() {
     timezone = base_timezone;
   }
 
-  // set true if you want to ask about changing normally left alone details
   var zoomcode = null;
   var phonenumber = base_phonenumber;
   if (false) {
@@ -128,4 +121,4 @@ javascript: function url() {
   );
 }
 
-window.open(url());
+window.open(createGCalEventUrl());
