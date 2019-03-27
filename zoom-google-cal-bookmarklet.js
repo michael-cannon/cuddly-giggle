@@ -1,4 +1,10 @@
 javascript: function createGCalEventUrl() {
+  var base_day_advance = 1;
+  var base_time_start = "1000";
+  var base_time_end = "1030";
+  var base_zoomcode = "8613144223";
+  var base_phonenumber = "+1 617 539 6072";
+
   var base_purpose_var = "TBD";
   var base_purpose = "Catch-up b/t " + base_purpose_var + " & Michael";
   var purpose = null;
@@ -11,12 +17,6 @@ javascript: function createGCalEventUrl() {
   } else {
     purpose = base_purpose.replace(base_purpose_var, selection);
   }
-
-  var base_day_advance = 1;
-  var base_time_start = "1000";
-  var base_time_end = "1030";
-  var base_zoomcode = "8613144223";
-  var base_phonenumber = "+1 617 539 6072";
 
   var date = new Date();
   var y = date.getFullYear();
