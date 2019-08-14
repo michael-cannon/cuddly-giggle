@@ -1,12 +1,13 @@
 javascript: function createGCalEventUrl() {
   var base_day_advance = 1;
   var base_time_start = "1000";
-  var base_time_end = "1030";
-  var base_zoomcode = "8613144223";
+  var base_time_end = "1025";
+  
   var base_phonenumber = "+1 617 539 6072";
-
   var base_purpose_var = "TBD";
   var base_purpose = "Catch-up b/t " + base_purpose_var + " & Michael";
+  var base_zoomcode = "8613144223";
+
   var purpose = null;
   var selection = window.getSelection().toString();
   if ("" == selection || null == selection) {
