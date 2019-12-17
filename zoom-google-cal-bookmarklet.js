@@ -7,6 +7,8 @@ javascript: function createGCalEventUrl() {
   var base_purpose_var = "TBD";
   var base_purpose = "Catch-up b/t " + base_purpose_var + " & Michael";
   var base_zoomcode = "8613144223";
+  
+  var location = "https://axelerant.zoom.us/j/" + base_zoomcode;
 
   var purpose = null;
   var selection = window.getSelection().toString();
@@ -87,9 +89,11 @@ javascript: function createGCalEventUrl() {
   }
 
   var details =
-    "Location contains connection details. Call or SMS " +
+    "Call or SMS " +
     phonenumber +
-    " for last-minute changes.\n\nDial in +16699006833,," +
+    " for last-minute changes.\n\nConnect via " +
+    location +
+    " or dial in +16699006833,," +
     zoomcode +
     "#,,,,,# or from India 0008000014002,," +
     zoomcode +
@@ -102,8 +106,8 @@ javascript: function createGCalEventUrl() {
     "https://calendar.google.com/calendar/r/eventedit?" +
     "&text=" +
     title +
-    "&location=https://axelerant.zoom.us/j/" +
-    zoomcode +
+    "&location=" +
+    location +
     "&sf=true" +
     "&output=xml" +
     "&details=" +
