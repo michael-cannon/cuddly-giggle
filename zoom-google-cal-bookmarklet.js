@@ -93,7 +93,7 @@ javascript: function createGCalEventUrl() {
     phonenumber +
     " for last-minute changes.\n\nConnect via " +
     location +
-    " or dial in +16699006833,," +
+    "\n\nDial in +16699006833,," +
     zoomcode +
     "#,,,,,# or from India 0008000014002,," +
     zoomcode +
