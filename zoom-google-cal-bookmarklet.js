@@ -2,10 +2,12 @@ javascript: function createGCalEventUrl() {
   var base_day_advance = 1;
   var base_time_start = "1000";
   var base_time_end = "1025";
+
+  var base_name = "Michael";
+  var base_phonenumber = "+1 360 990 8765";
   
-  var base_phonenumber = "+1 617 539 6072";
   var base_purpose_var = "TBD";
-  var base_purpose = "Catch-up b/t " + base_purpose_var + " & Michael";
+  var base_purpose = "Catch-up b/t " + base_purpose_var + " & " + base_name;
   var base_zoomcode = "8613144223";
   
   var location = "https://axelerant.zoom.us/j/" + base_zoomcode;
