@@ -91,7 +91,7 @@ javascript: function createGCalEventUrl() {
   }
 
   var details =
-    "Call or SMS " +
+    "SMS " +
     phonenumber +
     " for last-minute changes.\n\nConnect via " +
     location +
